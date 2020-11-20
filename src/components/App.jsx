@@ -12,6 +12,11 @@ function App() {
         setAllNotes([...allNotes, newNote])
     }
 
+    function deleteNote(idToDelete) {
+        const filteredArray = allNotes.filter((note, index) => index !== idToDelete)
+        setAllNotes(filteredArray)
+    }
+
     return <div>
         <Header />
         <CreateArea
@@ -19,6 +24,8 @@ function App() {
         {allNotes.map((note, index) => <Note
             title={note.title}
             content={note.content}
+            deleteNote={deleteNote}
+            id={index}
             key={index}
         />
         )}
