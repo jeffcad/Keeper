@@ -3,9 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background: #eee;
   padding: 0 16px;
@@ -35,6 +37,7 @@ footer {
 footer p {
   color: #ccc;
 }
+
 .note {
   background: #fff;
   border-radius: 7px;
@@ -44,10 +47,12 @@ footer p {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -58,15 +63,17 @@ footer p {
 .note button {
   position: relative;
   float: right;
+  margin-right: 10px;
   color: #f5ba13;
+  background: #fff;
   border: none;
-  width: 60px;
+  width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
 }
 
-form {
+form.create-note {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
@@ -75,8 +82,9 @@ form {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
-form input,
-form textarea {
+
+form.create-note input,
+form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -85,7 +93,8 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+
+form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
