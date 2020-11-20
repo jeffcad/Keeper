@@ -1,7 +1,8 @@
 import React from 'react'
+import EventNoteIcon from '@material-ui/icons/EventNote'
 
 function Header() {
-    return <header><h1>Keeper</h1></header>
+    return <header><h1><EventNoteIcon />Keeper</h1></header>
 }
 
 export { Header }
