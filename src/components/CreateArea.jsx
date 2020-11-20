@@ -6,29 +6,22 @@ function CreateArea(props) {
 
     function handleChange(event) {
         const { name, value } = event.target
-        switch (name) {
-            case "title":
-                setNoteText(Object.assign({}, noteText, { title: value }))
-                break
-            case "content":
-                setNoteText(Object.assign({}, noteText, { content: value }))
-                break
-            default:
-                console.log("Error: element name is not recognised")
-        }
+        setNoteText(prevText => ({ ...prevText, [name]: value }))
+    }
+
+    function handleClick(event) {
+        event.preventDefault()
+        props.addNote(noteText)
+        setNoteText({ title: "", content: "" })
     }
 
     return <div>
         <form>
             <input name="title" placeholder="Title" onChange={handleChange} value={noteText.title} />
             <textarea name="content" placeholder="Take a note..." rows="3" onChange={handleChange} value={noteText.content} />
-            <button type="button" onClick={() => {
-                props.addNote(noteText)
-                setNoteText({ title: "", content: "" })
-            }
-            }>Add</button>
+            <button onClick={handleClick}>Add</button>
         </form>
-    </div>
+    </div >
 }
 
 export { CreateArea }

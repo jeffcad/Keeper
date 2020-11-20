@@ -9,12 +9,11 @@ function App() {
     const [allNotes, setAllNotes] = useState([])
 
     function addNote(newNote) {
-        setAllNotes([...allNotes, newNote])
+        setAllNotes(prevNotes => [...prevNotes, newNote])
     }
 
     function deleteNote(idToDelete) {
-        const filteredArray = allNotes.filter((note, index) => index !== idToDelete)
-        setAllNotes(filteredArray)
+        setAllNotes(prevNotes => prevNotes.filter((note, index) => index !== idToDelete))
     }
 
     return <div>
